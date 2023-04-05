@@ -1,4 +1,11 @@
-import './globals.css'
+import "../styles/globals.css";
+import { Play } from "@next/font/google";
+
+const play = Play({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-play",
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +15,9 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className={`${play.className} background-gradient-01`}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
